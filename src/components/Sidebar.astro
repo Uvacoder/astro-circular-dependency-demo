@@ -1,0 +1,8 @@
+---
+let allPosts = Astro.fetchContent('../pages/posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+---
+
+<div>
+    {allPosts.map(p => <li>{p.title}</li>)}
+</div>
